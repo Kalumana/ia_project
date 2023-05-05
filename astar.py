@@ -204,7 +204,7 @@ class AEstrela:
         t.sleep(2)
         print(f'Estamos em: {cidade_atual.nome}')
 
-        if cidade_atual == "Faro":
+        if cidade_atual == self.destino:
             print('Chegamos ao destino!!')
             self.encontrado = True
         else:

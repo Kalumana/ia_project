@@ -33,9 +33,9 @@ def depth_first(graph, source_city, dest_city):
 
      while stack:
        
-        (node, path) = stack.pop()  # Pop the last node from the stack
+        (node, path) = stack.pop()  # remove the last node from the stack
         if node == dest_city:
-            print("\nChegamos ao nosso destino, passamos por : ", path)
+            print("\nChegamos ao nosso destino, passamos por : ", node)
             break
         print("*" * 100)
         print("\nEstamos na cidade: ", node)
@@ -68,7 +68,6 @@ def uniform_cost(graph, origin, destination):
             for vizinho, custo_vizinho in graph[node].items(): 
                 if vizinho not in visitados:
                     fila.append((custo + custo_vizinho, vizinho, caminho + [node])) #  (soma os custos, node atual, fila dos caminhos visitados)
-        
         fila.remove((custo, node, caminho)) # remove os caminhos visitados anteriormente da fila.
     
     return None
